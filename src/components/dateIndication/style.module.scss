@@ -1,0 +1,52 @@
+.main {
+  position: relative;
+  height: 100vh;
+  background: rgba(255, 217, 0, 0.714);
+  .rainbow {
+    position: absolute;
+    width: 600px;
+    left: 30%;
+    opacity: 0.4;
+    z-index: 1;
+  }
+  .theme {
+    position: absolute;
+    right: 10px;
+    width: 60px;
+    margin: 20px 50px 0px 10px;
+  }
+  h1 {
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+  }
+  .inputs {
+    position: relative;
+    z-index: 22345;
+    padding: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    input,
+    .inputs_select,
+    button {
+      padding: 10px 15px;
+      background: rgba(231, 172, 8, 0.953);
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-size: 20px;
+    }
+    .inputs_select {
+      width: 200px;
+      color: grey;
+      &.active {
+        color: black;
+      }
+      .inputs_option {
+        color: black;
+      }
+    }
+  }
+}
