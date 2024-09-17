@@ -3,7 +3,7 @@ import { createTheme } from "@mui/material/styles";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#FFD900",
+      main: "#4287f5",
       contrastText: "black",
     },
     secondary: {

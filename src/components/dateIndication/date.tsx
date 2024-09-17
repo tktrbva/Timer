@@ -15,6 +15,7 @@ const Date = () => {
   const [submittedDay, setSubmittedDay] = useState("");
   const [submittedMonth, setSubmittedMonth] = useState("");
   const [submittedEvent, setSubmittedEvent] = useState("");
+  const [isHover, setIsHover] = useState(false);
 
   const theme = useTheme();
 
@@ -57,7 +58,6 @@ const Date = () => {
     setSubmittedMonth(selectedMonth);
     setSubmittedEvent(event);
   };
-  console.log(theme.palette.primary);
 
   return (
     <>
@@ -70,11 +70,39 @@ const Date = () => {
         className={style.main}
       >
         <img className={style.rainbow} src={rainbow} alt="rainbow" />
-        {clickTheme === true ? (
-          <img className={style.theme} onClick={Click} src={iconBlack} alt="icon" />
-        ) : (
-          <img className={style.theme} onClick={Click} src={iconWhite} alt="icon" />
-        )}
+        <div
+          className={style.hover}
+          onMouseEnter={() => setIsHover(true)}
+          onMouseLeave={() => setIsHover(false)}
+        >
+          {clickTheme === true ? (
+            <img
+              className={style.theme}
+              onClick={Click}
+              src={iconBlack}
+              alt="icon"
+            />
+          ) : (
+            <img
+              className={style.theme}
+              onClick={Click}
+              src={iconWhite}
+              alt="icon"
+            />
+          )}
+          <p
+            style={
+              clickTheme === true
+                ? { color: theme.palette.primary.contrastText }
+                : { color: theme.palette.secondary.contrastText }
+            }
+            className={`${style.hoverText} ${
+              isHover === true ? style.visible : style.hidden
+            }`}
+          >
+            Change theme
+          </p>
+        </div>
         <h1
           style={
             clickTheme === true
