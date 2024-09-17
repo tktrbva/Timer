@@ -4,18 +4,28 @@
   align-items: center;
   flex-direction: column;
   gap: 30px;
-  p{
-  
-  font-size: 50px;}
+  transition: 0s ease-in-out;
+  p {
+    font-size: 50px;
+  }
   .main_time {
     display: flex;
     gap: 50px;
+    @media (max-width: 560px) {
+      gap: 20px;
+    }
     .main_time__h1 {
       display: flex;
       flex-direction: column;
       align-items: center;
       p {
         font-size: 40px;
+        @media (max-width: 645px) {
+          font-size: 25px;
+        }
+        @media (max-width: 435px) {
+          font-size: 17px;
+        }
       }
     }
   }
